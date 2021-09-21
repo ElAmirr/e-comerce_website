@@ -20,3 +20,14 @@ class RegisterForm(FlaskForm):
     password1 = PasswordField(label='Password:', validators=[Length(min=6), InputRequired()])
     password2 = PasswordField(label='Confirm Password:', validators=[EqualTo('password1'), InputRequired()])
     submit = SubmitField(label='Create Account')
+
+class LoginForm(FlaskForm):
+    username = StringField(label='User name', validators=[InputRequired()])
+    password = PasswordField(label='Password', validators=[InputRequired()])
+    submit = SubmitField(label='Sign in')
+
+class PurchaseItemForm(FlaskForm):
+    submit = SubmitField(label='Purchase Item!')
+
+class SellItemForm(FlaskForm):
+    submit = SubmitField(label='Sell Item!')
